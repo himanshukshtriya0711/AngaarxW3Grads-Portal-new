@@ -6,7 +6,7 @@ from home.models import FlamesCourse, FlamesRegistration, FlamesTeam, FlamesTeam
 from .event_models import Event, CertificateTemplate, Certificate
 from django.template.loader import get_template
 from django.template import engines, Template, Context
-from weasyprint import HTML
+# from weasyprint import HTML
 from django.http import HttpResponse
 
 # ======================================= FLAMES MAIN PAGE ================================

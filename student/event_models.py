@@ -4,7 +4,7 @@ from django.db import models
 from django.template.loader import get_template
 from django.conf import settings
 from django.utils import timezone
-from weasyprint import HTML
+# HTML(string=html_string).write
 
 from accounts.models import Student 
 
@@ -85,7 +85,7 @@ class Certificate(models.Model):
             self.certificate_id = f"{self.event.code}{self.student.pk}"
         super().save(*args, **kwargs)
 
-    from weasyprint import HTML
+    # HTML(string=html
 
 def generate_pdf(self):
     """Render certificate as a PDF in memory using WeasyPrint."""
@@ -111,9 +111,9 @@ def generate_pdf(self):
     # For example, if you want URLs in your template like /static/css/style.css, base_url helps WeasyPrint find them.
     base_url = settings.STATIC_ROOT  # or os.path.join(settings.BASE_DIR, 'static')
 
-    pdf_bytes = HTML(string=html_string, base_url=base_url).write_pdf()
+    # pdf_bytes = HTML(string=html_string, base_url=base_url).write_pdf()
 
-    return BytesIO(pdf_bytes)
+    # return BytesIO(pdf_bytes)
 
 
     def _link_callback(self, uri, rel):

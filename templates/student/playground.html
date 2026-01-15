@@ -414,6 +414,106 @@ Student | Coding Playground
         transform: translateY(-1px);
     }
 
+    /* Light mode support for presentation */
+    [data-bs-theme="light"] .presentation-mode {
+        background: #f8f9fa;
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .presentation-header {
+        background: linear-gradient(135deg, #e9ecef 0%, #dee2e6 100%);
+        border-bottom: 2px solid #dee2e6;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .presentation-title {
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .language-selector-header label,
+    [data-bs-theme="light"] .presentation-mode .font-size-controls label {
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .language-selector-header select,
+    [data-bs-theme="light"] .presentation-mode .font-size-slider {
+        background: #ffffff;
+        border-color: #dee2e6;
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .font-size-display {
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .presentation-left,
+    [data-bs-theme="light"] .presentation-mode .presentation-right {
+        background: #ffffff;
+        border-color: #dee2e6;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .resizer {
+        background: #dee2e6;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .resizer:hover {
+        background: #999999;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .code-header,
+    [data-bs-theme="light"] .presentation-mode .output-header {
+        background: #e9ecef;
+        border-color: #dee2e6;
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .code-header h4,
+    [data-bs-theme="light"] .presentation-mode .output-header h4 {
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .editor-container {
+        border-color: #dee2e6;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .controls-section {
+        background: #e9ecef;
+        border-color: #dee2e6;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .controls-section button {
+        background: #28a745;
+        color: white;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .controls-section button:hover {
+        background: #218838;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .input-section label {
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .input-section textarea {
+        background: #ffffff;
+        border-color: #dee2e6;
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .input-section textarea:focus {
+        border-color: #80bdff;
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    }
+
+    [data-bs-theme="light"] .presentation-mode .output-content {
+        background: #ffffff;
+        border-color: #dee2e6;
+        color: #333333;
+    }
+
+    [data-bs-theme="light"] .presentation-mode .output-content pre {
+        color: #333333;
+    }
+
     /* Dark mode support for presentation */
     [data-bs-theme="dark"] .presentation-mode {
         background: var(--bs-dark);
@@ -943,7 +1043,7 @@ Student | Coding Playground
         saveTimeout = setTimeout(autoSave, 2000); // Save after 2 seconds of inactivity
     }
 
-    // Force dark theme for presentation mode
+    // Update theme for both normal and presentation mode based on website theme
     function updateEditorTheme() {
         const currentTheme = localStorage.getItem("theme");
         const isDark = currentTheme === "dark" || document.documentElement.getAttribute('data-bs-theme') === 'dark';
@@ -951,8 +1051,8 @@ Student | Coding Playground
         const theme = isDark ? "ace/theme/twilight" : "ace/theme/chrome";
         editor.setTheme(theme);
         
-        // Always use dark theme for presentation mode
-        editorPresentation.setTheme("ace/theme/twilight");
+        // Use same theme for presentation mode as website
+        editorPresentation.setTheme(theme);
     }
 
     function setEditorContent(languageId, customCode = null) {

@@ -276,7 +276,8 @@ def verify_certificate(request):
 
 from django.template import Context, Template
 
-from weasyprint import HTML
+# HTML(string=html_string).write_pdf(response)
+
 from django.template import Context, Template
 from django.http import HttpResponse, Http404
 from io import BytesIO

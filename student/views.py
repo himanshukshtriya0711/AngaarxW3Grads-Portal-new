@@ -14,7 +14,7 @@ from .event_models import Event, CertificateTemplate, Certificate
 from practice.models import POD, Submission, Batch, Question, Sheet, Streak
 from home.models import Alumni, ReferralCode
 from django.template import engines, Template, Context
-from weasyprint import HTML
+# from weasyprint import HTML
 from django.http import HttpResponse
 from django.db.models import Max, Sum
 

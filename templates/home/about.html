@@ -728,6 +728,11 @@
             transform: translateX(-50%) translateY(20px);
         }
     }
+
+    /* Flip effect perspective */
+    .timeline-item {
+        perspective: 1000px;
+    }
 </style>
 {% endblock %}
 
@@ -820,25 +825,25 @@
     <h2 class="timeline-title" data-aos="fade-up"><span>Our Journey So Far</span></h2>
     <div class="timeline">
         <div class="timeline-item left" data-aos="fade-right">
-            <div class="timeline-content">
+            <div class="timeline-content" style="position: relative; transform-style: preserve-3d; transition: transform 0.6s;" onmouseover="this.style.transform='rotateY(180deg)'; this.style.backgroundImage='url(https://picsum.photos/300/200)'; this.style.backgroundSize='cover'; this.querySelector('h3').style.opacity='0'; this.querySelector('p').style.opacity='0';" onmouseout="this.style.transform='rotateY(0deg)'; this.style.backgroundImage=''; this.querySelector('h3').style.opacity='1'; this.querySelector('p').style.opacity='1';">
                 <h3 class="timeline-date">2023</h3>
                 <p>Founded with a vision to transform tech education</p>
             </div>
         </div>
         <div class="timeline-item right" data-aos="fade-left">
-            <div class="timeline-content">
+            <div class="timeline-content" style="position: relative; transform-style: preserve-3d; transition: transform 0.6s;" onmouseover="this.style.transform='rotateY(180deg)'; this.style.backgroundImage='url(https://picsum.photos/300/200)'; this.style.backgroundSize='cover'; this.querySelector('h3').style.opacity='0'; this.querySelector('p').style.opacity='0';" onmouseout="this.style.transform='rotateY(0deg)'; this.style.backgroundImage=''; this.querySelector('h3').style.opacity='1'; this.querySelector('p').style.opacity='1';">
                 <h3 class="timeline-date">Early 2024</h3>
                 <p>Launched our first batch with 100 students</p>
             </div>
         </div>
         <div class="timeline-item left" data-aos="fade-right">
-            <div class="timeline-content">
+            <div class="timeline-content" style="position: relative; transform-style: preserve-3d; transition: transform 0.6s;" onmouseover="this.style.transform='rotateY(180deg)'; this.style.backgroundImage='url(https://picsum.photos/300/200)'; this.style.backgroundSize='cover'; this.querySelector('h3').style.opacity='0'; this.querySelector('p').style.opacity='0';" onmouseout="this.style.transform='rotateY(0deg)'; this.style.backgroundImage=''; this.querySelector('h3').style.opacity='1'; this.querySelector('p').style.opacity='1';">
                 <h3 class="timeline-date">Mid 2024</h3>
                 <p>Expanded to multiple technologies and domains</p>
             </div>
         </div>
         <div class="timeline-item right" data-aos="fade-left">
-            <div class="timeline-content">
+            <div class="timeline-content" style="position: relative; transform-style: preserve-3d; transition: transform 0.6s;" onmouseover="this.style.transform='rotateY(180deg)'; this.style.backgroundImage='url(https://picsum.photos/300/200)'; this.style.backgroundSize='cover'; this.querySelector('h3').style.opacity='0'; this.querySelector('p').style.opacity='0';" onmouseout="this.style.transform='rotateY(0deg)'; this.style.backgroundImage=''; this.querySelector('h3').style.opacity='1'; this.querySelector('p').style.opacity='1';">
                 <h3 class="timeline-date">2025</h3>
                 <p>Growing strong with 13000+ successful students</p>
             </div>

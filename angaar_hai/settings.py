@@ -17,7 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.getenv("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG")
+DEBUG = os.getenv("DEBUG", "True") == "True"
+
 
 ALLOWED_HOSTS = ["*"]
 
@@ -125,9 +126,9 @@ CHANNEL_LAYERS = {
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': os.getenv("DB_NAME"),
-        'USER': os.getenv("DB_USER"),
-        'PASSWORD': os.getenv("DB_PASSWORD"),
+        'NAME': "angaar",
+        'USER': "root",
+        'PASSWORD': "himanshu",
         'HOST': 'localhost',
         'PORT': '3306',
         'OPTIONS': {
@@ -135,6 +136,7 @@ DATABASES = {
         },
     }
 }
+
 
 
 
