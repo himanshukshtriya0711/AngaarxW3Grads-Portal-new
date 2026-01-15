@@ -34,5 +34,5 @@ student/__pycache__/
 .DS_Store
 Thumbs.db
 
-
+.env
 prompt.txt
