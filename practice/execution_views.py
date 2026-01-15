@@ -421,8 +421,12 @@ def return_token(question, source_code, language_id, test_cases, cpu_time_limit,
         "wall_time_limit": cpu_time_limit,
         "memory_limit": memory_limit * 1000,
         "enable_per_process_and_thread_time_limit": True,
-        "base64_encoded": True
+        "base64_encoded": True,
+        "compiler_options": "-lm" if language_id in ['50', '54'] else None
+
     }
+
+
 
     # Use a session for connection pooling
     session = requests.Session()
